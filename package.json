@@ -84,5 +84,13 @@
   "peerDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JeanVuillet/myModal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JeanVuillet/myModal.git/issues"
+  },
+  "homepage": "https://github.com/JeanVuillet/myModal.git#readme"
 }
