@@ -8,7 +8,7 @@ function App() {
     <>
       <div>
     coucou monde
-        <Modal/>
+        <Modal open={true}/>
       </div>
     </>
   );
