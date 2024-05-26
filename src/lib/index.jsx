@@ -31,10 +31,11 @@ const ModalButton = styled.button`
 `;
 
 function MyModal({ open, modalMessage, buttonMessage }) {
+
   const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
-    setIsOpen(open);
+    setIsOpen(!isOpen);
   }, [open]);
 
   function closeModal() {
