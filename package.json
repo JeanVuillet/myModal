@@ -1,10 +1,16 @@
 {
-  "name": "mymodal2",
-  "version": "15.1.0",
-  "description": "Test publication package NPM. Contenu créé à partir du tutoriel du site https://www.cril.univ-artois.fr/~boussemart/react/chapter02.html",
+  "name": "mymodal3",
+  "version": "1.0.6",
+  "description": "A test NPM package for creating a modal component using React. Based on a tutorial from CRIL Université d'Artois.",
   "license": "MIT",
   "author": "jeanvuillet2",
-  "keywords": [],
+  "keywords": [
+    "modal",
+    "react",
+    "component",
+    "npm",
+    "tutorial"
+  ],
   "files": [
     "dist",
     "dist/style.css",
