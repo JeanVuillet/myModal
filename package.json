@@ -92,5 +92,8 @@
   "bugs": {
     "url": "https://github.com/JeanVuillet/myModal.git/issues"
   },
-  "homepage": "https://github.com/JeanVuillet/myModal.git#readme"
+  "homepage": "https://github.com/JeanVuillet/myModal.git#readme",
+  "dependencies": {
+    "styled-components": "^6.1.11"
+  }
 }
