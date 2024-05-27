@@ -2,41 +2,43 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const ModalContainer = styled.div`
-  position: absolute;
-  width: 30%;
-  height: 30%;
-  color: black;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  background-color: lightgrey;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  border: solid black;
-`;
+function MyModal({ open, ContainerObject, ModalObject, buttonObject, modalMessage, buttonMessage }) {
 
-const Modal = styled.div`
-  display: flex;
-  justify-content: center;
-`;
+  const ModalContainer = styled.div`
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    color: black;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: solid black;
+    ${ContainerObject}
+  `;
 
-const ModalButton = styled.button`
-  display: flex;
-  justify-content: center;
-  width: 30%;
-  height: auto;
-`;
+  const Modal = styled.div`
+    display: flex;
+    justify-content: center;
+    ${ModalObject}
+  `;
 
-function MyModal({ open, modalMessage, buttonMessage }) {
+  const ModalButton = styled.button`
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    height: auto;
+    ${buttonObject}
+  `;
 
   const [isOpen, setIsOpen] = useState(open);
 
   useEffect(() => {
-
-    setIsOpen(true);
+    setIsOpen(open);
   }, [open]);
 
   function closeModal() {
@@ -57,6 +59,9 @@ function MyModal({ open, modalMessage, buttonMessage }) {
 
 MyModal.propTypes = {
   open: PropTypes.bool.isRequired,
+  ContainerObject: PropTypes.string,
+  ModalObject: PropTypes.string,
+  buttonObject: PropTypes.string,
   modalMessage: PropTypes.string,
   buttonMessage: PropTypes.string,
 };
