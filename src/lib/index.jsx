@@ -35,12 +35,12 @@ function MyModal({ open, containerObject, modalObject, buttonObject, modalMessag
     ${buttonObject}
   `;
 
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if(open===true){
-    setIsOpen(true);
-    }
+  
+    setIsOpen(isOpen=>!isOpen);
+
   }, [open]);
 
   function closeModal() {
