@@ -35,35 +35,22 @@ function MyModal({ change, isOpen, setIsOpen, containerObject, modalObject, butt
     ${buttonObject}
   `;
 
-  const [isChaned, setIsChanged] = useState(change);
-
-
+  const [isChanged, setIsChanged] = useState(false);
 
   useEffect(() => {
-
-    setIsChanged(prevValue=>!prevValue);
-  
-
-  
-
+    setIsChanged(prevValue => !prevValue);
   }, [change]);
 
   function closeModal() {
-
-    if (isChaned){
-    setIsChanged(false);
+    if (isChanged) {
+      setIsChanged(false);
+    } else if (isOpen) {
+      setIsOpen(false);
     }
-    else if (isOpen){
-      setIsOpen(false)
-    }
-
-
-
-
   }
 
   return (
-    <ModalContainer className="modalContainer" style={{ display:  (isChaned || isOpen) ? 'flex' : 'none' }}>
+    <ModalContainer className="modalContainer" style={{ display: (isChanged || isOpen) ? 'flex' : 'none' }}>
       <Modal className="modalMessage">
         {modalMessage ? modalMessage : 'Opération validée'}
       </Modal>
@@ -75,10 +62,12 @@ function MyModal({ change, isOpen, setIsOpen, containerObject, modalObject, butt
 }
 
 MyModal.propTypes = {
-  open: PropTypes.bool.isRequired,
-  ContainerObject: PropTypes.string,
-  ModalObject: PropTypes.string,
-  buttonObject: PropTypes.string,
+  change: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  setIsOpen: PropTypes.func.isRequired,
+  containerObject: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  modalObject: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  buttonObject: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   modalMessage: PropTypes.string,
   buttonMessage: PropTypes.string,
 };
