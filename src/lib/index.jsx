@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function MyModal({ open, ContainerObject, ModalObject, buttonObject, modalMessage, buttonMessage }) {
+function MyModal({ open, containerObject, modalObject, buttonObject, modalMessage, buttonMessage }) {
 
   const ModalContainer = styled.div`
     position: absolute;
@@ -18,13 +18,13 @@ function MyModal({ open, ContainerObject, ModalObject, buttonObject, modalMessag
     justify-content: space-around;
     align-items: center;
     border: solid black;
-    ${ContainerObject}
+    ${containerObject}
   `;
 
   const Modal = styled.div`
     display: flex;
     justify-content: center;
-    ${ModalObject}
+    ${modalObject}
   `;
 
   const ModalButton = styled.button`
@@ -35,10 +35,10 @@ function MyModal({ open, ContainerObject, ModalObject, buttonObject, modalMessag
     ${buttonObject}
   `;
 
-  const [isOpen, setIsOpen] = useState(open);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    setIsOpen(open);
+    setIsOpen(true);
   }, [open]);
 
   function closeModal() {
