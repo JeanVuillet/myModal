@@ -1,6 +1,6 @@
 {
   "name": "mymodal4",
-  "version": "24.0.0",
+  "version": "24.1.0",
   "description": "A test NPM package for creating a modal component using React. Based on a tutorial from CRIL Université d'Artois.",
   "license": "MIT",
   "author": "jeanvuillet2",
