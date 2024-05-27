@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function MyModal({ open, containerObject, modalObject, buttonObject, modalMessage, buttonMessage }) {
+function MyModal({ change, isOpen, setIsOpen, containerObject, modalObject, buttonObject, modalMessage, buttonMessage }) {
 
   const ModalContainer = styled.div`
     position: absolute;
@@ -35,20 +35,35 @@ function MyModal({ open, containerObject, modalObject, buttonObject, modalMessag
     ${buttonObject}
   `;
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isChaned, setIsChanged] = useState(change);
+
+
 
   useEffect(() => {
-  
-    setIsOpen(isOpen=>!isOpen);
 
-  }, [open]);
+    setIsChanged(prevValue=>!prevValue);
+  
+
+  
+
+  }, [change]);
 
   function closeModal() {
-    setIsOpen(false);
+
+    if (isChaned){
+    setIsChanged(false);
+    }
+    else if (isOpen){
+      setIsOpen(false)
+    }
+
+
+
+
   }
 
   return (
-    <ModalContainer className="modalContainer" style={{ display: isOpen ? 'flex' : 'none' }}>
+    <ModalContainer className="modalContainer" style={{ display:  (isChaned || isOpen) ? 'flex' : 'none' }}>
       <Modal className="modalMessage">
         {modalMessage ? modalMessage : 'Opération validée'}
       </Modal>
