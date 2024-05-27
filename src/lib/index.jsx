@@ -35,7 +35,7 @@ function MyModal({ open, containerObject, modalObject, buttonObject, modalMessag
     ${buttonObject}
   `;
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     setIsOpen(true);
