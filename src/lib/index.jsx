@@ -35,8 +35,8 @@ function MyModal({ open, modalMessage, buttonMessage }) {
   const [isOpen, setIsOpen] = useState(open);
 
   useEffect(() => {
-    if(!isOpen){
-    setIsOpen(true);}
+
+    setIsOpen(true);
   }, [open]);
 
   function closeModal() {
