@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 function MyModal({  change, isOpen, setIsOpen, containerObject, modalObject, buttonObject, modalMessage, buttonMessage }) {
-closeModal();
+
   const ModalContainer = styled.div`
     position: absolute;
     width: 30%;
@@ -13,7 +13,7 @@ closeModal();
     transform: translate(-50%, -50%);
     left: 50%;
     background-color: lightgrey;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -35,12 +35,10 @@ closeModal();
     ${buttonObject}
   `;
 
-  const [isChanged, setIsChanged] = useState(change);
-
-
+  const [isChanged, setIsChanged] = useState(false);
 
   useEffect(() => {
-    setIsChanged(change);
+   setIsChanged(value=>!value)
   }, [change]);
 
   function closeModal() {
@@ -52,7 +50,7 @@ closeModal();
   }
 
   return (
-    <ModalContainer className="modalContainer" style={{ display:  'none' }}>
+    <ModalContainer className="modalContainer" style={{ display: (isChanged || isOpen) ? 'flex' : 'none' }}>
       <Modal className="modalMessage">
         {modalMessage ? modalMessage : 'Opération validée'}
       </Modal>
