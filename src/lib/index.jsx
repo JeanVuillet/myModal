@@ -50,7 +50,7 @@ function MyModal({  isOpen, setIsOpen, containerObject, modalObject, buttonObjec
   }
 
   return (
-    <ModalContainer className="modalContainer" style={{ display: (isChanged || isOpen) ? 'flex' : 'none' }}>
+    <ModalContainer className="modalContainer" style={{ display: ( isOpen) ? 'flex' : 'none' }}>
       <Modal className="modalMessage">
         {modalMessage ? modalMessage : 'Opération validée'}
       </Modal>
