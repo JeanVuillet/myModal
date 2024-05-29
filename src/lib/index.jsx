@@ -52,7 +52,7 @@ closeModal();
   }
 
   return (
-    <ModalContainer className="modalContainer" style={{ display: (isChanged || isOpen) ? 'flex' : 'none' }}>
+    <ModalContainer className="modalContainer" style={{ display:  'none' }}>
       <Modal className="modalMessage">
         {modalMessage ? modalMessage : 'Opération validée'}
       </Modal>
