@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 function MyModal({  change, isOpen, setIsOpen, containerObject, modalObject, buttonObject, modalMessage, buttonMessage }) {
-
+closeModal();
   const ModalContainer = styled.div`
     position: absolute;
     width: 30%;
@@ -37,7 +37,7 @@ function MyModal({  change, isOpen, setIsOpen, containerObject, modalObject, but
 
   const [isChanged, setIsChanged] = useState(change);
 
-  useEffect(()=>{closeModal},[])
+
 
   useEffect(() => {
     setIsChanged(change);
