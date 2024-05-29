@@ -1,6 +1,7 @@
 
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 function MyModal({  isOpen, setIsOpen, containerObject, modalObject, buttonObject, modalMessage, buttonMessage }) {
 
