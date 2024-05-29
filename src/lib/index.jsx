@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function MyModal({ change, isOpen, setIsOpen, containerObject, modalObject, buttonObject, modalMessage, buttonMessage }) {
+function MyModal({  isOpen, setIsOpen, containerObject, modalObject, buttonObject, modalMessage, buttonMessage }) {
 
   const ModalContainer = styled.div`
     position: absolute;
