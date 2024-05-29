@@ -1,10 +1,11 @@
 
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
+
 
 function MyModal({  isOpen, setIsOpen, containerObject, modalObject, buttonObject, modalMessage, buttonMessage }) {
-
+const [open, setOpen]=useState(false)
   const ModalContainer = styled.div`
     position: absolute;
     width: 30%;
