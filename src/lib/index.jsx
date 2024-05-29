@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -35,16 +35,11 @@ function MyModal({  isOpen, setIsOpen, containerObject, modalObject, buttonObjec
     ${buttonObject}
   `;
 
-  const [isChanged, setIsChanged] = useState(false);
 
-  useEffect(() => {
-    setIsChanged(prevValue => !prevValue);
-  }, [change]);
 
   function closeModal() {
-    if (isChanged) {
-      setIsChanged(false);
-    } else if (isOpen) {
+
+    if (isOpen) {
       setIsOpen(false);
     }
   }
