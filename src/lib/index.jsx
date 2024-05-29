@@ -1,11 +1,9 @@
-
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
 
+function MyModal({  change, isOpen, setIsOpen, containerObject, modalObject, buttonObject, modalMessage, buttonMessage }) {
 
-function MyModal({  isOpen, setIsOpen, containerObject, modalObject, buttonObject, modalMessage, buttonMessage }) {
-const [open, setOpen]=useState(false)
   const ModalContainer = styled.div`
     position: absolute;
     width: 30%;
@@ -37,17 +35,22 @@ const [open, setOpen]=useState(false)
     ${buttonObject}
   `;
 
+  const [isChanged, setIsChanged] = useState(change);
 
+  useEffect(() => {
+    setIsChanged(change);
+  }, [change]);
 
   function closeModal() {
-
-    if (isOpen) {
+    if (isChanged) {
+      setIsChanged(false);
+    } else if (isOpen) {
       setIsOpen(false);
     }
   }
 
   return (
-    <ModalContainer className="modalContainer" style={{ display: ( isOpen) ? 'flex' : 'none' }}>
+    <ModalContainer className="modalContainer" style={{ display: (isChanged || isOpen) ? 'flex' : 'none' }}>
       <Modal className="modalMessage">
         {modalMessage ? modalMessage : 'Opération validée'}
       </Modal>
@@ -55,6 +58,7 @@ const [open, setOpen]=useState(false)
         {buttonMessage ? buttonMessage : 'OK'}
       </ModalButton>
     </ModalContainer>
+
   );
 }
 
@@ -62,9 +66,9 @@ MyModal.propTypes = {
   change: PropTypes.bool.isRequired,
   isOpen: PropTypes.bool.isRequired,
   setIsOpen: PropTypes.func.isRequired,
-  containerObject: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  modalObject: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  buttonObject: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  containerObject: PropTypes.object,
+  modalObject: PropTypes.object,
+  buttonObject: PropTypes.object,
   modalMessage: PropTypes.string,
   buttonMessage: PropTypes.string,
 };
