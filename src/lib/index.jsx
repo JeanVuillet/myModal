@@ -13,7 +13,7 @@ closeModal();
     transform: translate(-50%, -50%);
     left: 50%;
     background-color: lightgrey;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
