@@ -1,13 +1,18 @@
 # MyModal4
 
+Preciser la version de node a utiliser
+
+l editeur de texte recommande vsc
+pour l installer 
+-npm install mymodal4
+-import 'mymodal4' 
 
 I Ouverture et fermeture de la modale
 
-Il existe deux façons de gérer l'ouverture et la fermeture de la modale
 
-    1 La props change: celle-ci prend une valeur boolean qui, lorsqu' elle change, changera le statut de la modale (ouverte si elle est fermee et vice versa).
 
-    2 Les props isOpen et SetIsOpen: qui correspondent à un useState type boolean et son setter. Le setter pourra être utilisé dans le composant parent pour ouvrir la modale  (setIsOpen(true)) et sera automatiquement utilisé dans la modale pour sa propre fermeture au clic sur le bouton ok.
+
+Les props isOpen et SetIsOpen: qui correspondent à un useState type boolean et son setter. Le setter pourra être utilisé dans le composant parent pour ouvrir la modale  (setIsOpen(true)) et sera automatiquement utilisé dans la modale pour sa propre fermeture au clic sur le bouton ok.
 
 II Customisation de la modale
 
