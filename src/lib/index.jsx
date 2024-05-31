@@ -56,9 +56,9 @@ function MyModal({
   `;
 
   function closeModal() {
-    if (isOpen) {
+  
       setIsOpen(false);
-    }
+
   }
 
   return (
