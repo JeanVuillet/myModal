@@ -64,11 +64,11 @@ function MyModal({
 
   return (
 
-    <>
+  
 
       <ModalContainer
         className="modalContainer"
-        style={{ display: isOpen ? "none" : "none" }}
+        style={{ display:  "none" }}
       >
 
         <Modal className="modalMessage">
@@ -78,7 +78,7 @@ function MyModal({
           {buttonMessage ? buttonMessage : "OK"}
         </ModalButton>
       </ModalContainer>
-    </>
+
   );
 }
 
