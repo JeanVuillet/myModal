@@ -83,7 +83,6 @@ function MyModal({
 }
 
 MyModal.propTypes = {
-  change: PropTypes.bool.isRequired,
   isOpen: PropTypes.bool.isRequired,
   setIsOpen: PropTypes.func.isRequired,
   modalContainer: PropTypes.object,
