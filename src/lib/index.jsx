@@ -68,7 +68,7 @@ function MyModal({
 
       <ModalContainer
         className="modalContainer"
-        style={{ display:"none", color:'yellow'}}
+
       >
 
         <Modal className="modalMessage">
