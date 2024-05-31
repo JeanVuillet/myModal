@@ -67,7 +67,8 @@ Description: Custom styles for the close button.
 Example:
 buttonContainer={{ backgroundColor: 'red', color: 'white', padding: '10px', border: 'none', borderRadius: '5px' }}
 
-Customization
+Customization 
+
 Message and Button Text
 Customize the message inside the modal and the text of the button using modalMessage and buttonMessage props.
 <Modal 

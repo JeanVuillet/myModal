@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Modal from "./lib/index.jsx";
 
 function App() {
@@ -7,8 +7,7 @@ function App() {
   return (
     <>
       <div>
-    coucou monde
-        <Modal open={true}/>
+        <Modal />
       </div>
     </>
   );
