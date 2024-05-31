@@ -34,7 +34,7 @@ function MyModal({
     transform: translate(-50%, -50%);
     left: 50%;
     background-color: lightgrey;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -63,11 +63,12 @@ function MyModal({
   }
 
   return (
+
     <>
 
       <ModalContainer
         className="modalContainer"
-        style={{ display: isOpen ? "flex" : "none" }}
+        style={{ display: isOpen ? "none" : "none" }}
       >
 
         <Modal className="modalMessage">
