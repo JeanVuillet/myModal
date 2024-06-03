@@ -17,78 +17,71 @@ import PropTypes from "prop-types";
  * @param {object} buttonContainer _ Défini les styles du bouton de la modale
  */
 function MyModal({
-  isOpen,
-  setIsOpen,
-  modalContainer,
-  messageContainer,
-  buttonContainer,
-  modalMessage,
-  buttonMessage,
+	isOpen,
+	setIsOpen,
+	modalContainer,
+	messageContainer,
+	buttonContainer,
+	modalMessage,
+	buttonMessage,
 }) {
-  const ModalContainer = styled.div`
-    position: absolute;
-    width: 30%;
-    height: 30%;
-    color: black;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    background-color: lightgrey;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    border: solid black;
-    ${modalContainer}
-  `;
+	const ModalContainer = styled.div`
+		position: absolute;
+		width: 30%;
+		height: 30%;
+		color: black;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		left: 50%;
+		background-color: lightgrey;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		border: solid black;
+		${modalContainer}
+	`;
 
-  const Modal = styled.div`
-    display: flex;
-    justify-content: center;
-    ${messageContainer}
-  `;
+	const Modal = styled.div`
+		display: flex;
+		justify-content: center;
+		${messageContainer}
+	`;
 
-  const ModalButton = styled.button`
-    display: flex;
-    justify-content: center;
-    width: 30%;
-    height: auto;
-    ${buttonContainer}
-  `;
+	const ModalButton = styled.button`
+		display: flex;
+		justify-content: center;
+		width: 30%;
+		height: auto;
+		${buttonContainer}
+	`;
 
-  function closeModal() {
-  
-      setIsOpen(false);
+	function closeModal() {
+		setIsOpen(false);
+	}
 
-  }
-
-  return (
-
-  
-
-      <ModalContainer
-        className="modalContainer"
-       style={isOpen?{display:"flex"}:{display:"none"}}
-      >
-
-        <Modal className="modalMessage">
-          {modalMessage ? modalMessage : "Opération validée"}
-        </Modal>
-        <ModalButton onClick={closeModal} className="modalButton">
-          {buttonMessage ? buttonMessage : "OK"}
-        </ModalButton>
-      </ModalContainer>
-
-  );
+	return (
+		<ModalContainer
+			className="modalContainer"
+			style={isOpen ? { display: "flex" } : { display: "none" }}
+		>
+			<Modal className="modalMessage">
+				{modalMessage ? modalMessage : "Opération validée"}
+			</Modal>
+			<ModalButton onClick={closeModal} className="modalButton">
+				{buttonMessage ? buttonMessage : "OK"}
+			</ModalButton>
+		</ModalContainer>
+	);
 }
 
 MyModal.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  setIsOpen: PropTypes.func.isRequired,
-  modalContainer: PropTypes.object,
-  messageContainer: PropTypes.object,
-  buttonContainer: PropTypes.object,
-  modalMessage: PropTypes.string,
-  buttonMessage: PropTypes.string,
+	isOpen: PropTypes.bool.isRequired,
+	setIsOpen: PropTypes.func.isRequired,
+	modalContainer: PropTypes.object,
+	messageContainer: PropTypes.object,
+	buttonContainer: PropTypes.object,
+	modalMessage: PropTypes.string,
+	buttonMessage: PropTypes.string,
 };
 
 export default MyModal;
